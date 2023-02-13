@@ -1,4 +1,5 @@
 using Homework.Contexts;
+using Homework.Middlewares;
 using Homework.Services;
 using Microsoft.AspNetCore.Authentication.JwtBearer;
 using Microsoft.EntityFrameworkCore;
@@ -71,6 +72,7 @@ app.UseAuthentication();
 app.UseAuthorization();
 app.UseStaticFiles();
 app.MapControllers();
+app.UseExceptionHandlingMiddleware();
 
 app.Run();
 
